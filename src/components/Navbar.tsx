@@ -91,17 +91,17 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right side: Language + CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Right side: Language + CTA + Mobile Menu */}
+          <div className="flex items-center gap-2 sm:gap-4">
             {/* Language switcher */}
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 text-white/80 hover:text-gold text-sm font-semibold transition-colors"
+                className="flex items-center gap-1.5 text-white/80 hover:text-gold text-sm font-semibold transition-colors p-2"
                 title={currentLocale.name}
               >
-                <span className="text-base">{currentLocale.flag}</span>
-                <span>{currentLocale.label}</span>
+                <span className="text-xl sm:text-base">{currentLocale.flag}</span>
+                <span className="hidden sm:inline">{currentLocale.label}</span>
               </button>
               <AnimatePresence>
                 {langOpen && (
@@ -131,19 +131,19 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className="px-6 py-2.5 bg-gold text-navy-900 font-bold rounded-full text-sm hover:bg-gold-300 shadow-lg hover:shadow-gold/40 transition-all duration-300 transform hover:-translate-y-0.5"
+              className="hidden lg:inline-flex px-6 py-2.5 bg-gold text-navy-900 font-bold rounded-full text-sm hover:bg-gold-300 shadow-lg hover:shadow-gold/40 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               {t('contact')}
             </Link>
-          </div>
 
-          {/* Mobile menu toggle */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile menu toggle */}
+            <button
+              className="lg:hidden text-white p-2"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 
