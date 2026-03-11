@@ -63,15 +63,16 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/achkidLogoo.png"
-              alt="Achkid Tours"
-              width={140}
-              height={64}
-            
-              
-            />
+          <Link href="/" className={`flex-shrink-0 z-50 ${menuOpen ? 'pointer-events-none lg:pointer-events-auto' : ''}`} onClick={() => setMenuOpen(false)}>
+            <div className={`transition-all duration-300 ${menuOpen ? 'opacity-0 invisible lg:opacity-100 lg:visible' : 'opacity-100 visible'}`}>
+              <Image
+                src="/achkidLogoo.png"
+                alt="Achkid Tours"
+                width={140}
+                height={64}
+                className="w-28 md:w-[140px] h-auto"
+              />
+            </div>
           </Link>
 
           {/* Desktop nav links */}
