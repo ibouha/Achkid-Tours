@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tour {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  images      String[]
+  price       Float
+  duration    String
+  category    String
+  location    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Activity {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  images      String[]
+  price       Float
+  location    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  url       String
+  category  String
+  createdAt DateTime @default(now())
+}
+
+model Apartment {
+  id            String   @id @default(cuid())
+  name          String
+  photos        String[]
+  pricePerNight Float
+  location      String
+  description   String
+  capacity      Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Booking {
+  id              String   @id @default(cuid())
+  name            String
+  phone           String
+  email           String
+  itemType        String   // e.g., "TOUR", "ACTIVITY"
+  itemId          String   // ID of the specific tour or activity
+  numberOfPersons Int
+  date            DateTime
+  notes           String?
+  createdAt       DateTime @default(now())
+}

@@ -1,0 +1,17 @@
+{
+  "Navigation": {
+    "home": "Accueil",
+    "tours": "Circuits",
+    "activities": "Activités",
+    "apartments": "Appartements",
+    "products": "Boutique",
+    "about": "À Propos",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "headline": "Découvrez les Meilleurs Circuits et Expériences à Agadir",
+    "subtitle": "Des aventures inoubliables, des plages de sable de Taghazout au majestueux désert du Sahara.",
+    "exploreTours": "Explorer les circuits",
+    "bookActivity": "Réserver une activité"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "tours": "Tours",
+    "activities": "Activities",
+    "apartments": "Apartments",
+    "products": "Shop",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "Hero": {
+    "headline": "Discover the Best Tours & Experiences in Agadir",
+    "subtitle": "Unforgettable adventures, from the sandy beaches of Taghazout to the majestic Sahara desert.",
+    "exploreTours": "Explore Tours",
+    "bookActivity": "Book an Activity"
+  }
+}
